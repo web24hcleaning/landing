@@ -436,6 +436,8 @@
   .form-card h3{font-size:1.25rem; margin-bottom:6px;}
   .form-card p.hint{color:var(--ink-soft); font-size:13.5px; margin-bottom:26px;}
   .field{margin-bottom:18px;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:420px){.field-row{grid-template-columns:1fr;}}
   .field label{display:block; font-size:13px; font-weight:700; margin-bottom:7px; color:var(--ink);}
   .field input, .field select, .field textarea{
     width:100%; padding:13px 14px; border-radius:12px; border:1.5px solid var(--line);
@@ -750,9 +752,15 @@
             <label for="f-name">Full name</label>
             <input type="text" id="f-name" name="name" placeholder="Jane Smith" required>
           </div>
-          <div class="field">
-            <label for="f-phone">Phone number</label>
-            <input type="tel" id="f-phone" name="phone" placeholder="(555) 123-4567" required>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-phone">Phone number</label>
+              <input type="tel" id="f-phone" name="phone" placeholder="(555) 123-4567" required>
+            </div>
+            <div class="field">
+              <label for="f-zip">ZIP code</label>
+              <input type="text" id="f-zip" name="zip_code" placeholder="11701" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required>
+            </div>
           </div>
           <div class="field">
             <label for="f-service">Service needed</label>
